@@ -15,6 +15,7 @@
 }
 		body {
 			background: black;
+			overflow: hidden;
 		}
 		.container {
 			position: relative;
@@ -25,6 +26,7 @@
 			perspective: 900px;
 		}
 		.cube {
+			position: relative;
 			width: 200px;
 			height: 200px;
 			-webkit-transform-origin: center center;
@@ -46,55 +48,54 @@
 			border: 3px solid #999;
 			border-radius: 5px;
 			background: rgba(255, 255, 255, 0.6);
+			-webkit-animation: flash 1s infinite linear;
+			        animation: flash 1s infinite linear;	
 		}
 		.cube .side .effect {
-			background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
-			opacity: 0.9;
+			background-image: -webkit-radial-gradient(center, ellipse closest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
+			opacity: 0;
 			width: 100%;
 			height: 100%;
 			position: absolute;
-			overflow: hidden;
-			-webkit-animation: flash 0.1s linear infinite;
-			        animation: flash 0.1s linear infinite;
-		}
+	  }
 		.cube .side.front {
 			background-color: #d00;
-			/*opacity: .6;*/
+			opacity: .9;
 			-webkit-transform: translate3d(0, 0, 100px);
 			-ms-transform: translate3d(0, 0, 100px);
 			transform: translate3d(0, 0, 100px);
 		}
 		.cube .side.back {
 			background-color: #dd0;
-			/*opacity: .9;*/
+			opacity: .9;
 			-webkit-transform: rotateY(180deg) translate3d(0, 0, 100px);
 			-ms-transform: rotateY(180deg) translate3d(0, 0, 100px);
 			transform: rotateY(180deg) translate3d(0, 0, 100px);
 		}
 		.cube .side.left {
 			background-color: #FF00AE;
-			/*opacity: .9;*/
+			opacity: .9;
 			-webkit-transform: rotateY(-90deg) translate3d(0, 0, 100px);
 			-ms-transform: rotateY(-90deg) translate3d(0, 0, 100px);
 			transform: rotateY(-90deg) translate3d(0, 0, 100px);
 		}
 		.cube .side.right {
 			background-color: #04d;
-			/*opacity: .9;*/
+			opacity: .9;
 			-webkit-transform: rotateY(90deg) translate3d(0, 0, 100px);
 			-ms-transform: rotateY(90deg) translate3d(0, 0, 100px);
 			transform: rotateY(90deg) translate3d(0, 0, 100px);
 		}
 		.cube .side.top {
 			background-color: #0dd;
-			/*opacity: .9;*/
+			opacity: .9;
 			-webkit-transform: rotateX(90deg) translate3d(0, 0, 100px);
 			-ms-transform: rotateX(90deg) translate3d(0, 0, 100px);
 			transform: rotateX(90deg) translate3d(0, 0, 100px);
 		}
 		.cube .side.bottom {
 			background-color: #6a0;
-			/*opacity: .9;*/
+			opacity: .9;
 			-webkit-transform: rotateX(-90deg) translate3d(0, 0, 100px);
 			-ms-transform: rotateX(-90deg) translate3d(0, 0, 100px);
 			transform: rotateX(-90deg) translate3d(0, 0, 100px);
@@ -104,22 +105,4 @@
 
 0% {
 	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
-}
-
-25% {
-	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
-}
-
-50% {
-	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
-}
-
-75% {
-	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
-}
-
-100% {
-	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(255,255,255,.8) 40%, rgba(255,255,255,.6) 70%);			
-}
-
-}
+ }
